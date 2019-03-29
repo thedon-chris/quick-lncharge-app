@@ -30,7 +30,7 @@ router.get("/fetchInvoice/:id/wait", async (req, res, next) => {
       invoice,
       /* timeout: */ 600 /* seconds */
     );
-    if (paid) return completeTransaction(invoice);
+    if (paid) return res.json({ success: true, data: invoice });
     else if (paid === false)
       console.log("invoice expired and can no longer be paid");
     else if (paid === null)
