@@ -2,12 +2,14 @@ import React from "react";
 import "./App.css";
 import Button from "@material-ui/core/Button";
 import Modal from "./Modal";
+import Success from "./Success";
 const axios = require("axios");
 const qrcode = require("qrcode");
 
 function App() {
   const [open, setOpen] = React.useState(false);
   const [qrCode, setQrCode] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
 
   function handleClose() {
     setOpen(false);
@@ -15,6 +17,7 @@ function App() {
 
   function paymentSuccess() {
     setOpen(false);
+    setSuccess(true);
   }
 
   async function onButtonClick() {
@@ -46,6 +49,7 @@ function App() {
         Show me an invoice
       </Button>
       <Modal open={open} handleClose={handleClose} qr={qrCode} />
+      <Success success={success} />
     </div>
   );
 }

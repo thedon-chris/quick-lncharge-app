@@ -5,8 +5,8 @@ const ChargeClient = require("lightning-charge-client");
 
 // new is optional
 const ln_charge = new ChargeClient(
-  "https://btcpay.myawesomedomain.com/lightning-charge/btc/",
-  "mysecretoken"
+  "https://btcpay2.myawesomedomain.com/lightning-charge/btc/",
+  "mysupersecretkey"
 );
 /* GET home page. */
 router.get("/", function(req, res, next) {
